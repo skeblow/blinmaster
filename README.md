@@ -1,9 +1,2 @@
-# blinmaster
+# cooking app
 
-cooking app
-
-start the project:
-
-```
-deno task start
-```
