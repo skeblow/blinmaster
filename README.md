@@ -15,6 +15,11 @@ with [FrankenPHP](https://frankenphp.dev) and [Caddy](https://caddyserver.com/) 
 6. navigate to `http://localhost:8080/?pgsql=database&username=app` to see db
 7. run `docker compose exec php bin/console` to access symfony console
 
+## Upgrade versions
+
+- PHP: in `~/Dockerfile` `FROM dunglas/frankenphp:1-php[VERSION]`
+- DB: `~/compose.yaml` service `database:`
+- composer packages: `docker compose exec php composer update *`
 ## Features
 
 * Production, development and CI ready
