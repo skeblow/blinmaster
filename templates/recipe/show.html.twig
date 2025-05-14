@@ -3,24 +3,20 @@
 {% block title %}Recipe{% endblock %}
 
 {% block body %}
-    <h1>Recipe</h1>
+    <div class="row">
+        <div class="col-6">
+            img
+        </div>
+        <div class="col-6">
+            <h1>{{ recipe.name }}</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ recipe.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ recipe.name }}</td>
-            </tr>
-        </tbody>
-    </table>
+            TODO category
+        </div>
+    </div>
+{% endblock %}
 
-    <a href="{{ path('app_recipe_index') }}">back to list</a>
-
-    <a href="{{ path('app_recipe_edit', {'id': recipe.id}) }}">edit</a>
+{% block actions %}
+    <a href="{{ path('app_recipe_edit', {'id': recipe.id}) }}" class="btn btn-secondary">edit</a>
 
     {{ include('recipe/_delete_form.html.twig') }}
 {% endblock %}

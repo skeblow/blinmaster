@@ -5,9 +5,19 @@
 {% block body %}
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/app/src/Controller/IndexController.php</code></li>
-        <li>Your template at <code>/app/templates/index/index.html.twig</code></li>
-    </ul>
+    <div class="row">
+        {% for recipe in recipes %}
+            <div class="col-4">
+                <div class="card">
+                    <a class="card-body text-center" href="{{ path('app_recipe_show', {'id': recipe.id}) }}">
+                        {{ recipe.name }}
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block actions %}
+    <a href="{{ path('app_recipe_new') }}" class="btn btn-primary">+</a>
 {% endblock %}
